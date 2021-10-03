@@ -5,7 +5,9 @@
 * network mapping:
   * postgres at 5432
   * control-center at 9021
-  * kafka at 29092
+  * kafka:
+    * 29092 inside docker network
+    * 9092 on host
   * kafka-metrics at 9101
   * zookeeper at 2181
   * mongodb at 27017
