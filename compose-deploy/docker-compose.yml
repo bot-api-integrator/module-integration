@@ -5,8 +5,6 @@ services:
     restart: always
     hostname: zookeeper
     container_name: zookeeper
-    ports:
-      - '2181:2181'
     volumes:
       - zookeeper-data:/var/lib/zookeeper/data
       - zookeeper-log:/var/lib/zookeeper/log
@@ -24,7 +22,6 @@ services:
       - zookeeper
     ports:
       - '9092:9092'
-      - '9101:9101'
     volumes:
       - kafka-data:/var/lib/kafka/data
     environment:
@@ -87,7 +84,6 @@ services:
     ports:
       - '27017:27017'
     environment:
-      MONGO_INITDB_DATABASE: developer
       MONGO_INITDB_ROOT_USERNAME: developer
       MONGO_INITDB_ROOT_PASSWORD: somepassword
     volumes:
